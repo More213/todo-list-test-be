@@ -1,9 +1,7 @@
-export class CreateTodoDTO {
-    readonly id: string;
-    readonly title: String;
-    readonly todos: [{
-        readonly id: string;
+import { ObjectId } from "mongodb";
+
+export class CreateToDoDTO {
+        readonly _id: ObjectId;
         readonly text: String;
-        readonly isCompleted: Boolean
-    }]
+        isCompleted: Boolean
 }

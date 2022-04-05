@@ -1,12 +1,13 @@
+import { Schema } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 export const CategorySchema = new mongoose.Schema({
-    id: ObjectId,
+    _id: ObjectId,
     title: String,
     todos: [{
-        id: ObjectId,
+        _id: ObjectId,
         text: String,
         isCompleted: Boolean
-    }]
+}]
 })

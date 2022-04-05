@@ -2,15 +2,16 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { CategorySchema } from './todo/schemas/todo.shema';
-
+import { CategoryModule } from './category/category.module';
+import { ToDoModule } from './todo/toDo.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://admin:KTMdcLtWwtAJ9hJA@ciri-cluster0.beufu.mongodb.net/todo-test?retryWrites=true&w=majority', {
+    MongooseModule.forRoot('mongodb://localhost/todo-db', {
       useNewUrlParser: true
     }),
-    MongooseModule.forFeature([{ name: 'Todo', schema: CategorySchema }])
+    CategoryModule,
+    
   ],
   controllers: [AppController],
   providers: [AppService],
