@@ -27,5 +27,13 @@ export class AppController {
   })
   }
 
-  
+  @Post('/postTodo')
+  addTodo(@Res() res, 
+  @Body() body: CreateCategoryDTO): any {
+    const newCategory = this.categoryService.addNewTodo(body);
+    return res.status(HttpStatus.OK).json({
+      message: "Post has been submitted successfully!",
+      post: newCategory
+  })
+  }
 }
