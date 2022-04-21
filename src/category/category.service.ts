@@ -16,7 +16,7 @@ export class CategoryService {
 
   async getAllTodos(): Promise<Category[]> {
     const category = await this.categoryModel.find().exec();
-    console.log(category)
+    // console.log(category)
     return category;
 }
 
@@ -30,11 +30,26 @@ export class CategoryService {
       }]
     })
     newCategory.save()
+  
   }
 
   async addNewTodo(category: any): Promise<any> {
     const newTodo = await this.categoryModel.findById(category._id)
     newTodo.todos.push(category.todos[0])
     newTodo.save()
+  }
+
+  async checkUpdateTodo(todo: any): Promise<any> {
+    // const newTodoId = '625f09902a83701bd03b7147'
+    // console.log(todo)
+
+    const updateTodo = await this.categoryModel
+      .findOneAndUpdate({
+        _id: todo.categoryId ,
+        'todos._id': todo.todoId} ,
+        { $set: {'todos.$.isCompleted': todo.isComplete }})
+    // console.log(updateTodo)
+    updateTodo.save()
+
   }
 }

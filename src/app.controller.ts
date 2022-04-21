@@ -15,12 +15,14 @@ export class AppController {
   @Get()
   getHello(): any {
     return this.categoryService.getAllTodos();
+
   }
 
   @Post('/post')
   addCategory(@Res() res, 
   @Body() body: CreateCategoryDTO): any {
     const newCategory = this.categoryService.addNewCategoty(body);
+    // const updateToDo = this.categoryService.checkUpdateTodo(body);
     return res.status(HttpStatus.OK).json({
       message: "Post has been submitted successfully!",
       post: newCategory
@@ -34,6 +36,15 @@ export class AppController {
     return res.status(HttpStatus.OK).json({
       message: "Post has been submitted successfully!",
       post: newCategory
+  })
+  }
+
+  @Post('/checkTodo')
+  updateCatgory(@Res() res,
+  @Body() body: any): any {
+    const updateToDo = this.categoryService.checkUpdateTodo(body);
+    return res.status(HttpStatus.OK).json({
+      message: "Post has been submitted successfully!",
   })
   }
 }
