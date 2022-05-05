@@ -19,7 +19,7 @@ ToDoModule = __decorate([
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: 'Todo', schema: toDo_schema_1.ToDoSchema }])
         ],
-        controllers: [ToDo_controller_1.ToDoController],
+        controllers: [ToDo_controller_1.default],
         providers: [toDo_service_1.ToDoService],
         exports: [toDo_service_1.ToDoService]
     })

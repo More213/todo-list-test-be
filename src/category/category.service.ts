@@ -3,7 +3,6 @@ import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Category } from './interfaces/category.interface';
 import { CreateCategoryDTO } from './dto/create-category.dto';
-import { CreateToDoDTO } from 'src/todo/dto/create-ToDo.dto';
 import { ObjectID } from 'bson';
 
 @Injectable()

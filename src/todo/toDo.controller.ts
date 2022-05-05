@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 
 @Controller()
-export class ToDoController {
+export default class ToDoController {
 
 }

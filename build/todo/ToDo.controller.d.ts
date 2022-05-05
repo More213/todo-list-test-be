@@ -1,2 +1,2 @@
-export declare class ToDoController {
+export default class ToDoController {
 }

@@ -2,8 +2,6 @@ import { Controller, Get, Res, Post, Body, HttpStatus } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CategoryService } from './category/category.service'
 import { CreateCategoryDTO } from './category/dto/create-category.dto'
-import { CreateToDoDTO } from './todo/dto/create-ToDo.dto'; 
-
 
 @Controller()
 export class AppController {
