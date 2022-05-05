@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ToDoSchema } from './schemas/toDo.schema';
-import ToDoController from './ToDo.controller';
+import ToDoController from './toDo.controller';
 import { ToDoService } from './toDo.service';
 
 

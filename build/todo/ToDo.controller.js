@@ -13,4 +13,4 @@ ToDoController = __decorate([
     (0, common_1.Controller)()
 ], ToDoController);
 exports.default = ToDoController;
-//# sourceMappingURL=ToDo.controller.js.map
+//# sourceMappingURL=toDo.controller.js.map

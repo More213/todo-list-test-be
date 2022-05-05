@@ -10,7 +10,7 @@ exports.ToDoModule = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const toDo_schema_1 = require("./schemas/toDo.schema");
-const ToDo_controller_1 = require("./ToDo.controller");
+const toDo_controller_1 = require("./toDo.controller");
 const toDo_service_1 = require("./toDo.service");
 let ToDoModule = class ToDoModule {
 };
@@ -19,7 +19,7 @@ ToDoModule = __decorate([
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: 'Todo', schema: toDo_schema_1.ToDoSchema }])
         ],
-        controllers: [ToDo_controller_1.default],
+        controllers: [toDo_controller_1.default],
         providers: [toDo_service_1.ToDoService],
         exports: [toDo_service_1.ToDoService]
     })
