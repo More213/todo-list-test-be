@@ -9,7 +9,7 @@ async function bootstrap() {
   // app.use(express.static(path.join(__dirname, 'build/todo-list-test-fe')));
 
   app.enableCors()
-  await app.listen(process.env.PORT || 3000, () => {
+  await app.listen(3000, () => {
     console.log(`Server started on port ${process.env.PORT || 3000}`);
   });
 }
