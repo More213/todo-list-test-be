@@ -13,7 +13,7 @@ import { join } from 'path';
       useNewUrlParser: true
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, 'todo-list-test-fe'),
+      rootPath: join(__dirname, '../build', 'todo-list-test-fe'),
     }),
     CategoryModule,
     
