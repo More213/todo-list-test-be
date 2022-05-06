@@ -10,7 +10,7 @@ export class AppController {
     private readonly categoryService: CategoryService
     ) {}
 
-  @Get()
+  @Get('/getCategories')
   getHello(): any {
     return this.categoryService.getAllTodos();
 

@@ -9,11 +9,11 @@ import { join } from 'path';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.MONGO_CONNECTION_URL, {
+    MongooseModule.forRoot(process.env.MONGO_CONNECTION_URL  , {
       useNewUrlParser: true
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, 'build', 'index.html'),
+      rootPath: join(__dirname, '../', 'build'),
     }),
     CategoryModule,
     
