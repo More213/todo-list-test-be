@@ -19,11 +19,11 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb://localhost/todo-db', {
+            mongoose_1.MongooseModule.forRoot(process.env.MONGO_CONNECTION_URL, {
                 useNewUrlParser: true
             }),
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, '..', 'build'),
+                rootPath: (0, path_1.join)(__dirname, '..', 'build/todo-list-test-fe'),
             }),
             category_module_1.CategoryModule,
         ],

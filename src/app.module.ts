@@ -9,11 +9,11 @@ import { join } from 'path';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/todo-db', {
+    MongooseModule.forRoot(process.env.MONGO_CONNECTION_URL, {
       useNewUrlParser: true
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'build'),
+      rootPath: join(__dirname, '..', 'build//todo-list-test-fe'),
     }),
     CategoryModule,
     
