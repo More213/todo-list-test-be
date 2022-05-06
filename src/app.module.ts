@@ -13,7 +13,7 @@ import { join } from 'path';
       useNewUrlParser: true
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'build'),
+      rootPath: join(__dirname),
     }),
     CategoryModule,
     
@@ -22,3 +22,4 @@ import { join } from 'path';
   providers: [AppService],
 })
 export class AppModule {}
+
