@@ -7,7 +7,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
 const app = await NestFactory.create(AppModule);
   // app.use(express.static(path.join(__dirname, 'build/todo-list-test-fe')));
-
+console.log(__dirname)
   app.enableCors()
   await app.listen(process.env.PORT || 8080, () => {
     console.log(`Server started on port ${process.env.PORT || 8080}`);
