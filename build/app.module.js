@@ -23,7 +23,7 @@ AppModule = __decorate([
                 useNewUrlParser: true
             }),
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, '..', 'build/todo-list-test-fe'),
+                rootPath: (0, path_1.join)(__dirname, 'build', 'todo-list-test-fe'),
             }),
             category_module_1.CategoryModule,
         ],
