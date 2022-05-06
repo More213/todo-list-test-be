@@ -13,7 +13,7 @@ import { join } from 'path';
       useNewUrlParser: true
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../../'),
+      rootPath: join(__dirname, '../../../'),
     }),
     CategoryModule,
     
