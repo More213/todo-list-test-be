@@ -3,7 +3,7 @@ import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Category } from './interfaces/category.interface';
 import { CreateCategoryDTO } from './dto/create-category.dto';
-import { ObjectID } from 'bson';
+
 
 @Injectable()
 export class CategoryService {
@@ -15,7 +15,6 @@ export class CategoryService {
 
   async getAllTodos(): Promise<Category[]> {
     const category = await this.categoryModel.find().exec();
-    // console.log(category)
     return category;
 }
 
@@ -39,15 +38,12 @@ export class CategoryService {
   }
 
   async checkUpdateTodo(todo: any): Promise<any> {
-    // const newTodoId = '625f09902a83701bd03b7147'
-    // console.log(todo)
-
     const updateTodo = await this.categoryModel
       .findOneAndUpdate({
         _id: todo.categoryId ,
         'todos._id': todo.todoId} ,
         { $set: {'todos.$.isCompleted': todo.isComplete }})
-    // console.log(updateTodo)
+
     updateTodo.save()
 
   }

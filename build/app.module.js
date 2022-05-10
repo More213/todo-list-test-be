@@ -12,18 +12,18 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const mongoose_1 = require("@nestjs/mongoose");
 const category_module_1 = require("./category/category.module");
-const serve_static_1 = require("@nestjs/serve-static");
-const path_1 = require("path");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             mongoose_1.MongooseModule.forRoot('mongodb://localhost/todo-db', {
-                useNewUrlParser: true
-            }),
-            serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, '..', 'build'),
+                useNewUrlParser: true,
+                lookup: undefined,
+                family: undefined,
+                hints: undefined,
+                localAddress: undefined,
+                localPort: undefined
             }),
             category_module_1.CategoryModule,
         ],

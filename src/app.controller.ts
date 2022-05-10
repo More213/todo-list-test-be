@@ -10,7 +10,7 @@ export class AppController {
     private readonly categoryService: CategoryService
     ) {}
 
-  @Get()
+  @Get('/getCategories')
   getHello(): any {
     return this.categoryService.getAllTodos();
 
@@ -20,7 +20,7 @@ export class AppController {
   addCategory(@Res() res, 
   @Body() body: CreateCategoryDTO): any {
     const newCategory = this.categoryService.addNewCategoty(body);
-    // const updateToDo = this.categoryService.checkUpdateTodo(body);
+
     return res.status(HttpStatus.OK).json({
       message: "Post has been submitted successfully!",
       post: newCategory
@@ -31,6 +31,7 @@ export class AppController {
   addTodo(@Res() res, 
   @Body() body: CreateCategoryDTO): any {
     const newCategory = this.categoryService.addNewTodo(body);
+
     return res.status(HttpStatus.OK).json({
       message: "Post has been submitted successfully!",
       post: newCategory
@@ -41,6 +42,7 @@ export class AppController {
   updateCatgory(@Res() res,
   @Body() body: any): any {
     const updateToDo = this.categoryService.checkUpdateTodo(body);
+    
     return res.status(HttpStatus.OK).json({
       message: "Post has been submitted successfully!",
   })

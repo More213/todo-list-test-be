@@ -1,16 +1,13 @@
 import { NestFactory } from '@nestjs/core';
-import { NestExpressApplication } from '@nestjs/platform-express';
-import express from 'express';
-import path from 'path';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-const app = await NestFactory.create(AppModule);
-  // app.use(express.static(path.join(__dirname, 'build/todo-list-test-fe')));
+  const app = await NestFactory.create(AppModule);
+
   var port = process.env.PORT || 3000;
-  // app.enableCors()
+  app.enableCors()
   await app.listen(port, () => {
-    console.log(`Server started on port ${process.env.PORT || 3000}`);
+    console.log(`Server started on port ${port}`);
   });
 }
 bootstrap();
