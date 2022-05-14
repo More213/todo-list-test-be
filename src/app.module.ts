@@ -8,13 +8,11 @@ import { join } from 'path';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/todo-db', {
-      useNewUrlParser: true,
-      lookup: undefined,
-      family: undefined,
-      hints: undefined,
-      localAddress: undefined,
-      localPort: undefined
+    MongooseModule.forRoot(process.env.MONGO_CONNECTION_URL, {
+      useNewUrlParser: true
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, 'client'),
     }),
     CategoryModule,
     
