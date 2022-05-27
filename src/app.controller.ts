@@ -1,17 +1,16 @@
 import { Controller, Get, Res, Post, Body, HttpStatus } from '@nestjs/common';
-import { AppService } from './app.service';
 import { CategoryService } from './category/category.service'
 import { CreateCategoryDTO } from './category/dto/create-category.dto'
+import { ICheckedTodo } from './todo/interface/toDo.interface';
 
 @Controller()
 export class AppController {
   constructor(
-    private readonly appService: AppService,
     private readonly categoryService: CategoryService
     ) {}
 
   @Get('/getCategories')
-  getHello(): any {
+  getCategory(): any {
     return this.categoryService.getAllTodos();
 
   }
@@ -40,7 +39,7 @@ export class AppController {
 
   @Post('/checkTodo')
   updateCatgory(@Res() res,
-  @Body() body: any): any {
+  @Body() body: ICheckedTodo): any {
     const updateToDo = this.categoryService.checkUpdateTodo(body);
     
     return res.status(HttpStatus.OK).json({

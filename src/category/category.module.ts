@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CategorySchema } from './schemas/category.shema';
-import { CategoryController } from './category.controller';
 import { CategoryService } from './category.service';
 import { ToDoModule } from '../todo/toDo.module'
 import { ToDoSchema } from 'src/todo/schemas/toDo.schema';
@@ -14,7 +13,7 @@ import { ToDoSchema } from 'src/todo/schemas/toDo.schema';
     ]),
     ToDoModule
   ],
-  controllers: [CategoryController],
+  controllers: [],
   providers: [CategoryService],
   exports: [CategoryService]
 })

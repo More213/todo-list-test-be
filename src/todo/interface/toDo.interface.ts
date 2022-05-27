@@ -3,3 +3,8 @@ export interface Todo{
         readonly text: String,
         isCompleted: Boolean
 }
+export interface ICheckedTodo {
+        categoryId: string,
+        todoId: string,
+        isCompleted: Boolean,
+}
