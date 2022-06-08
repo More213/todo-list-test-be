@@ -2,7 +2,7 @@ import { Controller, Get, Res, Post, Body, HttpStatus } from '@nestjs/common';
 import { CategoryService } from './category/category.service'
 import { CreateCategoryDTO } from './category/dto/create-category.dto'
 import { Category } from './category/interfaces/category.interface';
-import { ICheckedTodo } from './todo/interface/todo.interface';
+import { ICheckedTodoDTO } from './todo/dto/create-todo.dto';
 
 @Controller()
 export class AppController {
@@ -40,7 +40,7 @@ export class AppController {
 
   @Post('/checkTodo')
   updateCatgory(@Res() res,
-  @Body() body: ICheckedTodo): any {
+  @Body() body: ICheckedTodoDTO): any {
     const updateToDo = this.categoryService.checkUpdateTodo(body);
     
     return res.status(HttpStatus.OK).json({

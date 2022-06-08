@@ -8,7 +8,7 @@ import { join } from 'path';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      'mongodb://localhost/todo-db'
+      process.env.MONGO_CONNECTION_URL || 'mongodb://localhost/todo-db'
       , {
       useNewUrlParser: true
     }),
