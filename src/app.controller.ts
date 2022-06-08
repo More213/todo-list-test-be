@@ -11,9 +11,9 @@ export class AppController {
     ) {}
 
   @Get('/getCategories')
+
   getCategory(): Promise<Category[]> {
     return this.categoryService.getAllTodos();
-
   }
 
   @Post('/post')

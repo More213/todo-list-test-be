@@ -7,9 +7,7 @@ import { join } from 'path';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      process.env.MONGO_CONNECTION_URL || 'mongodb://localhost/todo-db'
-      , {
+    MongooseModule.forRoot(process.env.MONGO_CONNECTION_URL  , {
       useNewUrlParser: true
     }),
     // ServeStaticModule.forRoot({
@@ -22,3 +20,4 @@ import { join } from 'path';
   providers: [],
 })
 export class AppModule {}
+
