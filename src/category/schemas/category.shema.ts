@@ -4,8 +4,10 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 export const CategorySchema = new mongoose.Schema({
     _id: ObjectId,
     title: String,
+    atCreated: Date,
     todos: [{
         text: String,
-        isCompleted: Boolean
+        isCompleted: Boolean,
+        atUpdate: Date
 }]
 })
