@@ -1,12 +1,12 @@
 export class CreateToDoDTO {
-        readonly text: String;
-        isCompleted: Boolean;
-        atUpdate?: String
+        readonly text: string;
+        isCompleted: boolean;
+        atUpdate?: string
 }
 
 export class ICheckedTodoDTO {
         categoryId: string;
         todoId: string;
-        isCompleted: Boolean;
-        atUpdate?: String;
+        isCompleted: boolean;
+        atUpdate?: string;
 }
