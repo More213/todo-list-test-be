@@ -39,10 +39,11 @@ export class AppController {
   @Post('/checkTodo')
   updateCatgory(@Res() res,
   @Body() body: ICheckedTodoDTO): any {
-    const updateToDo = this.categoryService.checkUpdateTodo(body);
-    
-    return res.status(HttpStatus.OK).json({
-      message: "Post has been submitted successfully!",
-  })
+    const updateToDo = this.categoryService.checkUpdateTodo(body)
+    .then((todoId) => {
+      console.log(todoId)
+      return res.status(HttpStatus.OK).json(todoId)
+    })
+    .catch((error) => console.log(error))
   }
 }

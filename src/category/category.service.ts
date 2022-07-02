@@ -60,7 +60,7 @@ export class CategoryService {
 
   }
 
-  async checkUpdateTodo(todo: ICheckedTodoDTO): Promise<void> {
+  async checkUpdateTodo(todo: ICheckedTodoDTO): Promise<any> {
     const updateTodo = await this.categoryModel
       .findOneAndUpdate({
         _id: todo.categoryId ,
@@ -68,6 +68,11 @@ export class CategoryService {
         { $set: {'todos.$.isCompleted': todo.isCompleted }})
       if(updateTodo){
         updateTodo.update()
+        return {
+          categoryId: todo.categoryId,
+          todoId: todo.todoId,
+          isCompleted: todo.isCompleted
+        }
       }
   }
 
